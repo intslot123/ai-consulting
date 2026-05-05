@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI落地咨询 | 帮中小企业用好AI</title>
+    <meta name="description" content="前小米AI信息化负责人，帮中小企业用AI提效、少走弯路。一天Workshop，告诉你哪3件事用AI立刻能见效。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        },
+                        accent: {
+                            500: '#10b981',
+                            600: '#059669',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans SC', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-balance {
+                text-wrap: balance;
+            }
+            .gradient-text {
+                background: linear-gradient(135deg, #0ea5e9, #10b981);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 antialiased">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-bold text-xl text-brand-700">AI落地咨询</div>
+            <div class="hidden md:flex space-x-8 text-sm text-gray-600">
+                <a href="#about" class="hover:text-brand-600 transition-colors">关于我</a>
+                <a href="#service" class="hover:text-brand-600 transition-colors">服务内容</a>
+                <a href="#cases" class="hover:text-brand-600 transition-colors">案例分享</a>
+                <a href="#faq" class="hover:text-brand-600 transition-colors">常见问题</a>
+                <a href="#contact" class="hover:text-brand-600 transition-colors">联系我</a>
+            </div>
+            <a href="#contact" class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-2 rounded-lg text-sm font-medium transition-colors">
+                预约咨询
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-block px-4 py-1.5 bg-brand-50 text-brand-700 rounded-full text-sm font-medium mb-6">
+                前小米 · AI信息化负责人
+            </div>
+            <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold leading-tight mb-6 text-balance">
+                你的公司想做AI<br>
+                但不知道<span class="gradient-text">从哪下手？</span>
+            </h1>
+            <p class="text-[clamp(1.125rem,2vw,1.25rem)] text-gray-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+                不用招算法工程师，不用买大模型平台。<br class="hidden md:block">
+                一天时间，我告诉你你们公司哪3件事用AI立刻能见效。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-brand-600 hover:bg-brand-700 text-white px-8 py-4 rounded-xl text-lg font-medium transition-all shadow-lg shadow-brand-600/20 hover:shadow-xl hover:shadow-brand-600/30">
+                    预约一天Workshop →
+                </a>
+                <a href="#service" class="bg-white hover:bg-gray-50 text-gray-700 px-8 py-4 rounded-xl text-lg font-medium transition-all border border-gray-200 shadow-sm">
+                    了解服务详情
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 信任背书 -->
+    <section class="py-12 px-6 bg-white border-y border-gray-100">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-center text-gray-500 text-sm mb-8">服务过的客户来自</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-60">
+                <div class="text-xl font-semibold text-gray-400">汽车之家</div>
+                <div class="text-xl font-semibold text-gray-400">小米</div>
+                <div class="text-xl font-semibold text-gray-400">多家中小企业</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">关于我</h2>
+                <p class="text-gray-600">在大厂踩过的坑，帮你少走弯路</p>
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="w-32 h-32 bg-gradient-to-br from-brand-500 to-accent-500 rounded-3xl flex items-center justify-center text-white text-5xl font-bold mb-6">
+                            王
+                        </div>
+                        <h3 class="text-2xl font-bold mb-2">王涛 / Tony Wang</h3>
+                        <p class="text-brand-600 font-medium mb-6">AI落地咨询顾问</p>
+                        <p class="text-gray-600 leading-relaxed">
+                            10年以上大厂AI落地经验，前小米AI信息化负责人，主导过多个千万级别的AI落地项目。
+                            从零到一搭建了小米内部的AI应用体系，帮助多个业务部门实现效率提升30%以上。
+                        </p>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">10年+ 大厂AI落地经验</h4>
+                                <p class="text-gray-500 text-sm">在小米负责多个业务线的AI信息化，知道从0到1的完整路径</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-accent-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">不玩概念，只讲实效</h4>
+                                <p class="text-gray-500 text-sm">不讲大模型原理，不讲AGI幻想，只讲今天就能用的</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">帮你省下试错成本</h4>
+                                <p class="text-gray-500 text-sm">我踩过的坑，你不用再踩一遍，省下的就是赚到的</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服务内容 -->
+    <section id="service" class="py-20 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">一天AI落地Workshop</h2>
+                <p class="text-gray-600 max-w-xl mx-auto">8000元 / 天，我去你们公司现场做，结束时你会拿到一份可以立刻执行的行动清单</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-12">
+                <div class="bg-gray-50 rounded-2xl p-8 card-hover border border-gray-100">
+                    <div class="text-4xl mb-4">🌅</div>
+                    <h3 class="text-xl font-bold mb-3">上午：建立认知</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent-500 mt-0.5">✓</span>
+                            AI现在到底能做什么（结合你们行业）
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent-500 mt-0.5">✓</span>
+                            哪些是真有用，哪些是忽悠
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent-500 mt-0.5">✓</span>
+                            其他公司都在用AI做什么
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent-500 mt-0.5">✓</span>
+                            中小企业做AI的正确姿势
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 card-hover border border-gray-100">
+                    <div class="text-4xl mb-4">🌆</div>
+                    <h3 class="text-xl font-bold mb-3">下午：你的专属方案</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent-500 mt-0.5">✓</span>
+                            每个部门提1-2个可能的场景
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent-500 mt-0.5">✓</span>
+                            一起讨论哪些最适合先做
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent-500 mt-0.5">✓</span>
+                            排出优先级：Top 3 立刻开始
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-accent-500 mt-0.5">✓</span>
+                            制定具体执行计划：谁来做，多久做完
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-br from-brand-50 to-accent-50 rounded-3xl p-8 md:p-10 text-center">
+                <div class="text-5xl mb-4">📋</div>
+                <h3 class="text-2xl font-bold mb-4">你能拿到什么？</h3>
+                <div class="max-w-md mx-auto space-y-4 text-left">
+                    <div class="flex items-center gap-3">
+                        <span class="w-6 h-6 bg-brand-600 text-white rounded-full flex items-center justify-center text-sm flex-shrink-0">1</span>
+                        <span>一份《你们公司AI落地行动清单》（Top 3 优先级）</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-6 h-6 bg-brand-600 text-white rounded-full flex items-center justify-center text-sm flex-shrink-0">2</span>
+                        <span>每个优先级的具体执行步骤和负责人</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-6 h-6 bg-brand-600 text-white rounded-full flex items-center justify-center text-sm flex-shrink-0">3</span>
+                        <span>1个月的微信答疑支持</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="w-6 h-6 bg-brand-600 text-white rounded-full flex items-center justify-center text-sm flex-shrink-0">4</span>
+                        <span>后续深度合作的优先对接资格</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 适合谁 -->
+    <section class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">什么样的公司适合找我？</h2>
+                <p class="text-gray-600">找对方法，效率翻倍</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4 bg-white p-6 rounded-2xl border border-green-100 card-hover">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1">20-200人规模的中小企业</h4>
+                            <p class="text-gray-500 text-sm">还没有专门的AI团队，但想抓住这次技术变革的机会</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white p-6 rounded-2xl border border-green-100 card-hover">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1">技术总监/CTO/老板本人重视</h4>
+                            <p class="text-gray-500 text-sm">决策者亲自参加，才能保证讨论出来的结果能落地</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white p-6 rounded-2xl border border-green-100 card-hover">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1">愿意为效率付费，不想自己摸石头过河</h4>
+                            <p class="text-gray-500 text-sm">知道信息差就是生产力，花钱买别人验证过的经验</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4 bg-white p-6 rounded-2xl border border-red-100 card-hover">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1">不适合：想找"AI解决方案"的</h4>
+                            <p class="text-gray-500 text-sm">我不卖软件，不卖系统，我只告诉你你的公司应该怎么用</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white p-6 rounded-2xl border border-red-100 card-hover">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1">不适合：还在观望，只是想了解一下</h4>
+                            <p class="text-gray-500 text-sm">我的时间很贵，只留给真正想把AI用起来的团队</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 bg-white p-6 rounded-2xl border border-red-100 card-hover">
+                        <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-1">不适合：预算低于8000的</h4>
+                            <p class="text-gray-500 text-sm">这个定价已经是友情价了，不议价，谢谢理解</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例分享 -->
+    <section id="cases" class="py-20 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">客户怎么说</h2>
+                <p class="text-gray-600">真实案例，真实效果</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 rounded-2xl p-8 card-hover border border-gray-100">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-brand-100 rounded-full flex items-center justify-center text-brand-700 font-bold text-xl">
+                            陈
+                        </div>
+                        <div>
+                            <div class="font-semibold">陈超</div>
+                            <div class="text-sm text-gray-500">某汽车营销公司 · 技术总监</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        "本来以为AI离我们还很远，一天Workshop下来才发现，我们身边至少有5件事今天就能用AI做。
+                        光是用AI写方案这一件事，我们团队效率就提升了至少2倍。"
+                    </p>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-500">⭐</span>
+                        <span class="text-yellow-500">⭐</span>
+                        <span class="text-yellow-500">⭐</span>
+                        <span class="text-yellow-500">⭐</span>
+                        <span class="text-yellow-500">⭐</span>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 card-hover border border-gray-100">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-14 h-14 bg-accent-100 rounded-full flex items-center justify-center text-accent-700 font-bold text-xl">
+                            李
+                        </div>
+                        <div>
+                            <div class="font-semibold">李总</div>
+                            <div class="text-sm text-gray-500">某SaaS公司 · 创始人</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        "最有价值的不是学到了什么AI技巧，而是老王帮我们把优先级理清楚了。
+                        原来想做一个大而全的AI平台，后来发现先做两个小场景，两个月就看到效果了，这才是中小企业该做的事。"
+                    </p>
+                    <div class="flex gap-1">
+                        <span class="text-yellow-500">⭐</span>
+                        <span class="text-yellow-500">⭐</span>
+                        <span class="text-yellow-500">⭐</span>
+                        <span class="text-yellow-500">⭐</span>
+                        <span class="text-yellow-500">⭐</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section id="faq" class="py-20 px-6">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">常见问题</h2>
+                <p class="text-gray-600">你关心的问题，这里都有答案</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="bg-white rounded-2xl p-6 border border-gray-100">
+                    <h4 class="font-semibold text-lg mb-2">Q: 一天时间够吗？会不会太赶了？</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        A: 其实一天刚刚好。我们不需要讨论所有的可能性，只需要找出3个最适合你们先做的事。
+                        而且上午讲完，下午趁热打铁立刻讨论，效果是最好的。如果拖成两天，大家的思路就断了，反而效果不好。
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100">
+                    <h4 class="font-semibold text-lg mb-2">Q: 可以线上做吗？</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        A: 可以，但我强烈建议线下做。线下讨论的效果是线上的好几倍：大家坐在一起更容易进入状态，
+                        白板讨论更方便，中午吃饭的时候还能聊很多正式场合聊不到的东西。当然如果你们实在不方便，线上也可以。
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100">
+                    <h4 class="font-semibold text-lg mb-2">Q: 多少人参加比较合适？</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        A: 建议5-10个人效果最好。人太少的话，视角不够全面；人太多的话，讨论起来效率低。
+                        最好的组合是：1个技术负责人 + 2-3个核心业务负责人 + 3-5个一线骨干员工。
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100">
+                    <h4 class="font-semibold text-lg mb-2">Q: 你对我们这个行业不了解怎么办？</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        A: 这恰恰是我的价值所在。你懂你的业务，我懂AI能做什么，我们两个加在一起，
+                        就能找出最适合你们的方案。而且我做过很多不同行业的案例，很多方法其实是相通的。
+                        在来之前，我也会先做功课，了解一下你们行业现在AI应用的情况。
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100">
+                    <h4 class="font-semibold text-lg mb-2">Q: 做完Workshop之后，还有后续支持吗？</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        A: 有的。做完Workshop之后，我会给你们留1个月的微信答疑时间，你们在执行过程中遇到任何问题都可以问我。
+                        如果你们需要更深入的支持，比如帮你们把某个场景落地，或者做更长期的AI规划，我也有对应的咨询服务。
+                    </p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-100">
+                    <h4 class="font-semibold text-lg mb-2">Q: 可以开发票吗？</h4>
+                    <p class="text-gray-600 leading-relaxed">
+                        A: 可以的，可以开咨询服务费的发票。具体细节付款前沟通清楚。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我 -->
+    <section id="contact" class="py-20 px-6 bg-gradient-to-br from-brand-700 to-brand-600 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">预约咨询</h2>
+            <p class="text-brand-100 mb-10 max-w-xl mx-auto">
+                扫码加我微信，备注"咨询"，我们先聊30分钟，确认合适了再预约Workshop
+            </p>
+
+            <div class="bg-white rounded-3xl p-8 md:p-12 text-gray-800 max-w-md mx-auto">
+                <div class="w-48 h-48 bg-gray-100 rounded-2xl mx-auto mb-6 flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-6xl mb-2">📱</div>
+                        <div class="text-sm text-gray-500">微信二维码占位</div>
+                    </div>
+                </div>
+                <div class="space-y-3">
+                    <p class="font-semibold text-lg">微信号：xxx</p>
+                    <p class="text-gray-500 text-sm">（你可以把你的微信二维码放在这里）</p>
+                </div>
+            </div>
+
+            <div class="mt-12 text-brand-200 text-sm">
+                <p>💰 定价：8000元 / 天，北京本地可上门，外地需报销差旅</p>
+                <p class="mt-2">⏰ 每周最多接待2个客户，保证质量，建议提前预约</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="py-12 px-6 bg-gray-900 text-gray-400 text-sm">
+        <div class="max-w-4xl mx-auto text-center">
+            <p class="mb-4">AI落地咨询 | 帮中小企业用好AI</p>
+            <p>© 2025 王梓桐. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 平滑滚动 -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-sm');
+            } else {
+                nav.classList.remove('shadow-sm');
+            }
+        });
+    </script>
+</body>
+</html>
